@@ -1,0 +1,39 @@
+import sys
+import random
+
+
+opcion_usuario = ""
+opcion_usuario = ["piedra", "papel", "tijera"]
+# validar que se ingrese un parámetro
+if len(sys.argv) == 2:
+    # validar que la opción se encuentre entre una valida
+    if sys.argv[1].lower() in ("piedra", "papel", "tijera"):
+        # asignar opción valida al usuario
+        opcion_usuario = sys.argv[1].lower()
+        print(f"Opción de usuario = {opcion_usuario}")
+    else:
+        # si no ingreso un valor valido
+        print("debe de ingresar una opción valida, entre piedra, papel o tijera")
+        exit()
+# si no ingreso una opción valida
+else:
+    print("Debe de ingresar un parametro")
+    exit()
+
+opcion_pc = random.choice(["piedra", "papel", "tijera"])
+print(f"La PC ha sacado {opcion_pc}.")
+
+if opcion_usuario == opcion_pc:
+    print("Hemos EMPATADOOO01010101001011" )
+elif opcion_usuario == "tijera" and opcion_pc == "piedra": 
+    print("Has pErdidooO01010101.")
+elif opcion_usuario == "tijera" and opcion_pc == "papel":
+        print("Has GANADO tuu001010101010101010100011!!.")
+elif opcion_usuario == "piedra" and opcion_pc == "papel": 
+    print("Has pErdidooO01010101.")
+elif opcion_usuario == "piedra" and opcion_pc == "tijera":
+        print("Has GANADO tuu001010101010101010100011!!.")
+elif opcion_usuario == "papel" and opcion_pc == "tijera": 
+    print("Has pErdidooO01010101.")
+elif opcion_usuario == "papel" and opcion_pc == "piedra":
+        print("Has GANADO tuu001010101010101010100011!!.")
